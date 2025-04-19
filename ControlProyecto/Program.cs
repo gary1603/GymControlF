@@ -241,23 +241,32 @@ public class Program
     }
 
     // Método para validar que la entrada no sea vacía o nula
-  public static string ValidarEntrada()
+    public static string ValidarEntrada()
     {
         string entrada;
         do
         {
-            entrada = Console.ReadLine()?.Trim();
+            entrada = Console.ReadLine();
+            if (entrada == null)
+            {
+                // Simulación o error controlado si no hay más input
+                return string.Empty; // o lanzar excepción si prefieres
+            }
+
+            entrada = entrada.Trim();
+
             if (string.IsNullOrEmpty(entrada))
             {
                 Console.WriteLine("⚠ Este campo no puede estar vacío. Inténtelo nuevamente:");
             }
+
         } while (string.IsNullOrEmpty(entrada));
 
         return entrada;
     }
 
     // Método para validar la fecha de nacimiento
-  public  static string ValidarFecha()
+    public  static string ValidarFecha()
     {
         string fecha;
         DateTime fechaValida;

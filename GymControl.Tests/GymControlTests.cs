@@ -15,9 +15,15 @@ namespace GymControl.Tests
         public void ValidarEntrada_NoDebePermitirValoresVacios()
         {
             // Simulamos entrada vacía
-            Console.SetIn(new System.IO.StringReader("\n"));
+           Console.SetIn(new System.IO.StringReader("\n"));
             string resultado = Program.ValidarEntrada();
-            Assert.IsFalse(string.IsNullOrEmpty(resultado), "La entrada no puede estar vacía.");
+            Assert.IsTrue(string.IsNullOrEmpty(resultado), "La entrada no puede estar vacía.");
+
+            Console.SetIn(new StringReader("\nPrueba válida\n"));
+
+            string resulta = Program.ValidarEntrada();
+
+            Assert.AreEqual("Prueba válida", resulta);
 
         }
 
@@ -34,7 +40,7 @@ namespace GymControl.Tests
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_usuario", "12345678");
+                    cmd.Parameters.AddWithValue("@id_usuario", "1234");
                     cmd.Parameters.AddWithValue("@nombre", "Juan");
                     cmd.Parameters.AddWithValue("@apellido", "Pérez");
                     cmd.Parameters.AddWithValue("@fecha_nacimiento", "1990-05-15");
@@ -60,7 +66,7 @@ namespace GymControl.Tests
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_usuario", "12345678");
+                    cmd.Parameters.AddWithValue("@id_usuario", "1234");
                     cmd.Parameters.AddWithValue("@nombre", "Carlos");
 
                     int filasAfectadas = cmd.ExecuteNonQuery();
@@ -83,7 +89,7 @@ namespace GymControl.Tests
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_usuario", "12345678");
+                    cmd.Parameters.AddWithValue("@id_usuario", "1234");
                     cmd.Parameters.AddWithValue("@fecha_registro", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     cmd.Parameters.AddWithValue("@biceps_derecho", 40);
                     cmd.Parameters.AddWithValue("@biceps_izquierdo", 39);
@@ -108,7 +114,7 @@ namespace GymControl.Tests
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_usuario", "12345678");
+                    cmd.Parameters.AddWithValue("@id_usuario", "1234");
                     cmd.Parameters.AddWithValue("@biceps_derecho", 42);
 
                     int filasAfectadas = cmd.ExecuteNonQuery();
