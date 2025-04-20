@@ -8,7 +8,7 @@ namespace GymControl.Tests
     {
         // Cadena de conexión para la base de datos de pruebas
       //  private static string connectionString = "data source=DESKTOP-3HP58V7\\SQLEXPRESS;initial catalog=GymControl;trusted_connection=true;";
-        private static string connectionString = "data source=DESKTOP-3HP58V7\\SQLEXPRESS;initial catalog=GymControl;user id=usuario;password=12345;";
+        private static string connectionString = "data source=tcp:DESKTOP-3HP58V7\\SQLEXPRESS;initial catalog=GymControl;user id=usuario;password=12345;";
 
 
 
