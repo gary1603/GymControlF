@@ -44,7 +44,7 @@ namespace GymControl.Tests
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_usuario", "1234");
+                    cmd.Parameters.AddWithValue("@id_usuario", "12345");
                     cmd.Parameters.AddWithValue("@nombre", "Juan");
                     cmd.Parameters.AddWithValue("@apellido", "Pérez");
                     cmd.Parameters.AddWithValue("@fecha_nacimiento", "1990-05-15");
