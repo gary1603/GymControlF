@@ -252,7 +252,7 @@ public class Program
                 // Simulación o error controlado si no hay más input
                 return string.Empty; // o lanzar excepción si prefieres
             }
-
+            /// saasa
             entrada = entrada.Trim();
 
             if (string.IsNullOrEmpty(entrada))

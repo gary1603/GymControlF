@@ -44,12 +44,12 @@ namespace GymControl.Tests
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@id_usuario", "12345");
+                    cmd.Parameters.AddWithValue("@id_usuario", "115650872");
                     cmd.Parameters.AddWithValue("@nombre", "Juan");
                     cmd.Parameters.AddWithValue("@apellido", "Pérez");
-                    cmd.Parameters.AddWithValue("@fecha_nacimiento", "1990-05-15");
+                    cmd.Parameters.AddWithValue("@fecha_nacimiento", "1994-03-16");
                     cmd.Parameters.AddWithValue("@genero", "Masculino");
-                    cmd.Parameters.AddWithValue("@correo", "juan@example.com");
+                    cmd.Parameters.AddWithValue("@correo", "gsequeirag@example.com");
                     cmd.Parameters.AddWithValue("@telefono", "5551234");
 
                     int filasAfectadas = cmd.ExecuteNonQuery();
